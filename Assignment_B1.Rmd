@@ -90,7 +90,7 @@ calc_relative_abunance(GlobalPatterns) %>% head()
 
 In comparison, calling the function with a non-phyloseq input calls our first error message.
 
-```{r}
+```{r error=TRUE}
 calc_relative_abunance(1:5) 
 calc_relative_abunance(c("This is a character!")) 
 ```
@@ -101,7 +101,7 @@ calc_relative_abunance(c("This is a character!"))
 
 First let's demonstrate that the code calls an error if we don't use a phyloseq object. I have defined a simple dataframe, called df, as part of this test. We expect that any non-phyloseq input returns an error, which is what we see below!
 
-```{r variable-testing}
+```{r error=TRUE}
 df <- data_frame("Num"=1:5,"Let"=c("a","b","c","d","e"))
 test_that("Testing variable class specificity", {
   expect_error(calc_relative_abunance(2:10))
